@@ -1,5 +1,6 @@
 export default function Login(): JSX.Element {
-    return <main className="min-h-screen mt-12">
-        Login
-    </main>
+    return <>
+        <h1>ttle</h1>
+        <h4>desc</h4>
+    </>
 }

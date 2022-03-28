@@ -1,8 +1,6 @@
-import Navbar from "../components/Navbar";
-
 export default function Dashboard(): JSX.Element {
-    return <main className='min-h-screen w-full bg-red-400'>
-      <Navbar/>
-        Dashboard
-    </main>
+    return <>
+        <h1>ttle</h1>
+        <h4>desc</h4>
+    </>
 }

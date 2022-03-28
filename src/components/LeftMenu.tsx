@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 
-export default function Sidebar(): JSX.Element {
+export default function LeftMenu(): JSX.Element {
     // get the active Route path
     let isLoginPage = useLocation().pathname === '/' ? true : false
-    const sidebarItem: string = `w-full p-1 text-center text-white hover:bg-green-300`;
+    const sidebarItem: string = ``;
 
     // if the active Route path is Login, then disable Sidebar
     return isLoginPage ? <nav></nav> : <nav className="flex flex-col gap-3 items-center text-lg bg-green-600">

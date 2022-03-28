@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(): JSX.Element {
+    // get the active Route path
+    let isLoginPage = useLocation().pathname === '/' ? true : false
 
     // let [isLoggedIn, setIsLoggedIn] = useState(false);
     // function handleLogOut() { setIsLoggedIn(false) };
@@ -13,11 +15,12 @@ export default function Navbar() {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     function handleSetDropdownOpen() { setDropdownOpen(!isDropdownOpen) };
 
-    return <nav className="bg-blue-700 shadow-md w-full z-50">
+    // if the active Route path is Login, then disable Navbar
+    return isLoginPage ? <nav></nav> : <nav className="bg-blue-700 shadow-md w-full z-50">
         {/* <!-- container --> */}
-        <div className="container flex flex-wrap justify-between px-4 py-2 mx-auto lg:space-x-4">
+        <div className="flex flex-wrap justify-between items-center px-4 py-3 mx-auto lg:space-x-4">
             {/* <!-- brand --> */}
-            <Link to={`/dashboard`} className='p-1'><img src="./images/logo2.png" alt="Logo2" /></Link>
+            <Link to={`/dashboard`}><img src="./images/logo2.png" alt="Logo2" /></Link>
             {/* <!-- brand --> */}
 
             {/* <!-- toggler btn --> */}
@@ -30,24 +33,32 @@ export default function Navbar() {
 
             {/* <!-- menu --> */}
             <div className={`w-full mt-2 lg:inline-flex lg:w-auto lg:mt-0 ${isMobileNavOpen ? 'flex' : 'hidden'}`}>
-                <ul className="flex flex-col w-full space-y-2 lg:w-auto lg:flex-row lg:space-y-0 lg:space-x-2">
+                <ul className="flex flex-col w-full space-y-2 lg:mr-8 lg:w-auto lg:flex-row lg:gap-5 lg:items-center lg:space-y-0 lg:space-x-2">
+                    {/* <!-- Search Form --> */}
                     <li>
-                        <Link to={`/dashboard`} className='flex px-4 py-2 font-medium text-white rounded-md hover:bg-blue-800'>Dashboard</Link>
+                        <form className="flex">
+                            <input className="rounded-l-lg w-48 px-4 py-2 focus:border-0 focus:ring-0" placeholder="Search" />
+                            <button className="rounded-r-lg bg-yellow-400 font-bold px-4">Search</button>
+                        </form>
                     </li>
 
                     {/* <!-- dropdown --> */}
                     <li className="relative">
-                        <button className="px-4 py-2 font-medium text-white rounded-md hover:bg-blue-800" onFocus={handleSetDropdownOpen} onBlur={handleSetDropdownOpen}>
-                            Dropdown
+                        {/* <!-- dropdown Button --> */}
+                        <button className="flex gap-2 items-center font-medium text-white" onClick={handleSetDropdownOpen}>
+                            <img className="" src="images/profile.png" alt="Profile" />
+                            Unis Bandri
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
                         </button>
+                        {/* <!-- dropdown Button --> */}
+
                         {/* <!-- dropdown menu --> */}
                         <div className={`right-0 p-2 mt-1 bg-white rounded-md shadow-xl lg:absolute ${isDropdownOpen ? 'flex flex-col' : 'hidden'}`}>
                             <ul className="space-y-2 lg:w-48">
                                 <li>
-                                    <a href="#" className="flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-black">Categories</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-black">Brand</a>
+                                    <Link className='flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-200 hover:text-black' to={`/`} onClick={handleSetDropdownOpen}>Log Out</Link>
                                 </li>
                             </ul>
                         </div>
