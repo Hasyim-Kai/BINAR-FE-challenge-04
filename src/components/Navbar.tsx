@@ -15,6 +15,8 @@ export default function Navbar(): JSX.Element {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     function handleSetDropdownOpen() { setDropdownOpen(!isDropdownOpen) };
 
+    function handleLogOut() { setDropdownOpen(!isDropdownOpen); localStorage.removeItem('token'); };
+    
     // if the active Route path is Login, then disable Navbar
     return isLoginPage ? <nav></nav> : <nav className="bg-blue-700 shadow-md w-full z-50">
         {/* <!-- container --> */}
@@ -58,7 +60,7 @@ export default function Navbar(): JSX.Element {
                         <div className={`right-0 p-2 mt-1 bg-white rounded-md shadow-xl lg:absolute ${isDropdownOpen ? 'flex flex-col' : 'hidden'}`}>
                             <ul className="space-y-2 lg:w-48">
                                 <li>
-                                    <Link className='flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-200 hover:text-black' to={`/`} onClick={handleSetDropdownOpen}>Log Out</Link>
+                                    <Link className='flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-200 hover:text-black' to={`/`} onClick={handleLogOut}>Log Out</Link>
                                 </li>
                             </ul>
                         </div>

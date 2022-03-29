@@ -10,8 +10,6 @@ export default function Dashboard(): JSX.Element {
         if (!token) { navigateToLogin() }
     }
 
-    // const handleLogout = () => localStorage.removeItem('token')
-
     useEffect(() => checkUser(), [])
 
     return <>
