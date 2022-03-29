@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
         <section className='grow flex'>
           <LeftMenu />
           {/* HERE IS THE MAIN CONTENT */}
-          <main className="w-full overflow-scroll">
+          <main className="w-full overflow-scroll p-10 bg-gray-200">
             <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
