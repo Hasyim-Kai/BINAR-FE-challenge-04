@@ -16,14 +16,24 @@ export default function Navbar(): JSX.Element {
     function handleSetDropdownOpen() { setDropdownOpen(!isDropdownOpen) };
 
     function handleLogOut() { setDropdownOpen(!isDropdownOpen); localStorage.removeItem('token'); };
-    
+
     // if the active Route path is Login, then disable Navbar
     return isLoginPage ? <nav></nav> : <nav className="bg-blue-700 shadow-md w-full z-50">
         {/* <!-- container --> */}
         <div className="flex flex-wrap justify-between items-center px-4 py-3 mx-auto lg:space-x-4">
-            {/* <!-- brand --> */}
-            <Link to={`/dashboard`}><img src="./images/logo2.png" alt="Logo2" /></Link>
-            {/* <!-- brand --> */}
+            <div className='flex'>
+                {/* <!-- brand --> */}
+                <Link className='hidden lg:block' to={`/dashboard`}><img src="./images/logo2.png" alt="Logo2" /></Link>
+                {/* <!-- brand --> */}
+
+                {/* <!-- leftMenu toggler btn --> */}
+                <button className="w-10 h-10 ml-0 lg:ml-32 rounded-md outline-none focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                {/* <!-- leftMenu toggler btn --> */}
+            </div>
 
             {/* <!-- toggler btn --> */}
             <button onClick={handleSetMobileNavOpen} className="inline-flex items-center justify-center w-10 h-10 ml-auto text-white border rounded-md outline-none lg:hidden focus:outline-none">
@@ -39,10 +49,11 @@ export default function Navbar(): JSX.Element {
                     {/* <!-- Search Form --> */}
                     <li>
                         <form className="flex">
-                            <input className="rounded-l-lg w-48 px-4 py-2 focus:border-0 focus:ring-0" placeholder="Search" />
-                            <button className="rounded-r-lg bg-yellow-400 font-bold px-4">Search</button>
+                            <input className="rounded-l-sm w-48 px-4 py-2" placeholder="Search" />
+                            <button className="rounded-r-sm bg-yellow-400 font-bold px-4">Search</button>
                         </form>
                     </li>
+                    {/* <!-- Search Form --> */}
 
                     {/* <!-- dropdown --> */}
                     <li className="relative">
