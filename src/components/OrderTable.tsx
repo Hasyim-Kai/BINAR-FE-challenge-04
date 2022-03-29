@@ -39,7 +39,7 @@ const OrderTable = () => {
             <div>
                 <span>Limit<br /></span>
                 <select className="mt-2 p-2.5 border border-gray-300">
-                    <option selected>10</option>
+                    <option value="1">10</option>
                     <option value="2">20</option>
                     <option value="3">30</option>
                 </select>
@@ -49,7 +49,7 @@ const OrderTable = () => {
                 <span>Jump To Page<br /></span>
                 <div className="mt-2">
                     <select className="py-2.5 pl-2 pr-14 text-left border border-gray-300">
-                        <option selected>1</option>
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
