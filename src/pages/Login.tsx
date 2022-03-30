@@ -55,7 +55,7 @@ export default function Login(): JSX.Element {
                     <label className="text-lg">Password</label>
                     <input type="password" className={inputStyle} placeholder="6+ karakter" required onChange={handleOnChange} />
                 </div>
-                <input className={`mt-5 p-3 bg-red-700 rounded text-white cursor-pointer hover:text-2xl ${tailwindTransition}`} type="submit" value="Sign In" />
+                <input className={`mt-5 p-3 text-white bg-darkblue rounded cursor-pointer hover:text-2xl ${tailwindTransition}`} type="submit" value="Sign In" />
             </form>
         </div>
     </div>
