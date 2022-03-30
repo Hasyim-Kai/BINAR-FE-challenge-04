@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import CarCard from "../components/CarCard";
 
 export default function CarList(): JSX.Element {
-    const filterBtn = ``;
+    const filterBtn = `px-3 py-2 border-2 border-gray-400 text-gray-400 bg-white rounded hover:border-darkblue hover:text-darkblue hover:bg-blue-200`;
 
     const history = useNavigate();
     const navigateToLogin = () => history('/');
@@ -28,9 +28,9 @@ export default function CarList(): JSX.Element {
 
         {/* <!-- TITLE & ADD BUTTON --> */}
         <div className="flex justify-between mb-3">
-        <h1 className="text-2xl"><b>List Car</b></h1>
+            <h1 className="text-2xl"><b>List Car</b></h1>
             <Link to='/carlist/add_new_car'>
-                <button className="bg-purple-700 flex gap-2 p-3 text-white">
+                <button className="bg-darkblue flex gap-2 px-3 py-2 text-white">
                     <img src="images/icons/fi_plus.svg" alt="Plus" /> Add New Car
                 </button>
             </Link>
@@ -38,16 +38,16 @@ export default function CarList(): JSX.Element {
 
         {/* <!-- FILTER BUTTON GROUP --> */}
         <div className="flex gap-4 mb-7">
-            <button className="px-3 py-2 bg-green-500">All</button>
-            <button className={filterBtn}>Small</button>
-            <button className={filterBtn}>Medium</button>
-            <button className={filterBtn}>Large</button>
+            <button className="px-3 py-2 border-2 border-darkblue text-darkblue bg-blue-200 rounded"><b>All</b></button>
+            <button className={filterBtn}><b>Small</b></button>
+            <button className={filterBtn}><b>Medium</b></button>
+            <button className={filterBtn}><b>Large</b></button>
         </div>
 
         <section className="flex gap-5 justify-between flex-wrap">
-        <CarCard/>
-        <CarCard/>
-        <CarCard/>
+            <CarCard />
+            <CarCard />
+            <CarCard />
         </section>
     </>
 }
