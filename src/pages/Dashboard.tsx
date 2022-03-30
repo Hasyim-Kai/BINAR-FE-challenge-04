@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import CarTable from "../components/CarTable";
 import OrderTable from "../components/OrderTable";
 
 export default function Dashboard(): JSX.Element {
@@ -26,5 +27,6 @@ export default function Dashboard(): JSX.Element {
 
         <h1 className="text-2xl mb-8"><b>Dashboard</b></h1>
         <OrderTable />
+        <CarTable />
     </>
 }
