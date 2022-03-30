@@ -52,7 +52,7 @@ export default function AddNewCar(): JSX.Element {
                 <div className="grid grid-cols-5 mb-5">
                     <label className="mt-2">Foto{redStar}</label>
                     <div>
-                        <input className={`${formItemInput} w-96 file:bg-red-500 file:text-white file:border-0 file:mr-4 file:py-2 file:px-4 px-0 py-0`} type="file" name="car_photo" />
+                        <input className={`${formItemInput} w-screen file:bg-darkblue file:text-white file:border-0 file:mr-4 file:py-2 file:px-4 px-0 py-0`} type="file" name="car_photo" />
                         <div className="text-sm text-gray-500 mt-1">File size max. 2MB</div>
                     </div>
                 </div>
@@ -79,8 +79,8 @@ export default function AddNewCar(): JSX.Element {
             </div>
 
             {/* <!-- BUTTON FORM --> */}
-            <Link className="bg-white rounded-sm px-3 py-2 border-2 border-emerald-700" to="/carlist">Cancel</Link>
-            <button type="submit" className="ml-5 rounded-sm px-3 py-2 bg-red-500 text-white">Save</button>
+            <Link className="border-darkblue text-darkblue bg-backgroundGrey rounded px-3 py-2 border-2" to="/carlist"><b>Cancel</b></Link>
+            <button type="submit" className="ml-5 rounded-sm px-3 py-2 bg-darkblue text-white"><b>Save</b></button>
         </form>
     </>
 }
