@@ -5,7 +5,7 @@ const OrderTable = () => {
     const tableNumberNavBtn = `bg-red-400 py-3 px-4 border border-blue-700 rounded-sm`;
 
     return <>
-        <span className="border-l-4 border-red-500 pl-2"><b>List Order</b></span>
+        <p className="mb-5 border-l-4 border-red-500 pl-2"><b>List Order</b></p>
 
         <div className="relative overflow-x-auto">
             <table className="w-full text-left">
