@@ -1,15 +1,16 @@
 const OrderTable = () => {
     const sortButton = <button><img src="./images/icons/fi_sort.svg" alt="Sort" /></button>;
-    const tableItem = `px-5 py-3`;
-    const tableArrowNavBtn = `bg-red-400 p-3 pt-1 border border-blue-700 rounded-sm text-2xl`;
-    const tableNumberNavBtn = `bg-red-400 py-3 px-4 border border-blue-700 rounded-sm`;
+    const tableItem = `px-5 py-2`;
+    const tableArrowNavBtn = `bg-white p-3 pt-1 border-2 border-primaryGrey rounded-sm text-2xl text-gray-500`;
+    const tableNumberNavBtn = `bg-white py-3 px-4 border-2 border-primaryGrey rounded-sm text-gray-500`;
+    const dataCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     return <>
-        <p className="mb-5 border-l-4 border-red-500 pl-2"><b>List Order</b></p>
+        <p className="mb-5 border-l-4 border-darkblue pl-2"><b>List Order</b></p>
 
         <div className="relative overflow-x-auto">
             <table className="w-full text-left">
-                <thead className="bg-gray-500">
+                <thead className="bg-primaryGrey">
                     <tr>
                         <th scope="col" className={`${tableItem} w-12`}>No</th>
                         <th scope="col" className={tableItem}>User Email {sortButton}</th>
@@ -21,21 +22,21 @@ const OrderTable = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white">
-                    <tr className="border-b">
-                        <td className={tableItem}>1</td>
+                    {dataCount.map(data => <tr className="border-b">
+                        <td className={tableItem}>{data}</td>
                         <td className={tableItem}>User Email</td>
                         <td className={tableItem}>Car</td>
                         <td className={tableItem}>Start Rent</td>
                         <td className={tableItem}>Finish Rent</td>
                         <td className={tableItem}>Price</td>
                         <td className={tableItem}>Status</td>
-                    </tr>
+                    </tr>)}
                 </tbody>
             </table>
         </div>
 
         {/* <!-- TABLE PAGINATION --> */}
-        <div className="flex  gap-5 my-5">
+        <div className="flex gap-5 mt-5 mb-12">
             <div>
                 <span>Limit<br /></span>
                 <select className="mt-2 p-2.5 border border-gray-300">
@@ -56,7 +57,7 @@ const OrderTable = () => {
                         <option value="5">5</option>
                         <option value="6">6</option>
                     </select>
-                    <button className="bg-red-400 p-2.5" type="button">Go</button>
+                    <button className="bg-darkblue text-white p-2.5" type="button">Go</button>
                 </div>
             </div>
 
