@@ -18,7 +18,7 @@ export default function Navbar(): JSX.Element {
     function handleLogOut() { setDropdownOpen(!isDropdownOpen); localStorage.removeItem('token'); };
 
     // if the active Route path is Login, then disable Navbar
-    return isLoginPage ? <nav></nav> : <nav className="bg-blue-700 shadow-md w-full z-50">
+    return isLoginPage ? <nav></nav> : <nav className="bg-white shadow-md w-full z-50">
         {/* <!-- container --> */}
         <div className="flex flex-wrap justify-between items-center px-4 py-3 mx-auto lg:space-x-4">
             <div className='flex'>
@@ -36,8 +36,8 @@ export default function Navbar(): JSX.Element {
             </div>
 
             {/* <!-- toggler btn --> */}
-            <button onClick={handleSetMobileNavOpen} className="inline-flex items-center justify-center w-10 h-10 ml-auto text-white border rounded-md outline-none lg:hidden focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button onClick={handleSetMobileNavOpen} className="inline-flex items-center justify-center w-10 h-10 ml-auto border rounded-md outline-none lg:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="black">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
@@ -49,8 +49,8 @@ export default function Navbar(): JSX.Element {
                     {/* <!-- Search Form --> */}
                     <li>
                         <form className="flex">
-                            <input className="rounded-l-sm w-48 px-4 py-2" placeholder="Search" />
-                            <button className="rounded-r-sm bg-yellow-400 font-bold px-4">Search</button>
+                            <input className="rounded-l-sm border-2 border-primaryGrey w-full lg:w-48 px-4 py-1" placeholder="Search" />
+                            <button className="rounded-r-sm border-2 border-darkblue text-darkblue font-bold px-4">Search</button>
                         </form>
                     </li>
                     {/* <!-- Search Form --> */}
@@ -58,7 +58,7 @@ export default function Navbar(): JSX.Element {
                     {/* <!-- dropdown --> */}
                     <li className="relative">
                         {/* <!-- dropdown Button --> */}
-                        <button className="flex gap-2 items-center font-medium text-white" onClick={handleSetDropdownOpen}>
+                        <button className="flex gap-2 items-center font-medium" onClick={handleSetDropdownOpen}>
                             <img className="" src="images/profile.png" alt="Profile" />
                             Unis Bandri
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
