@@ -3,12 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 export default function Sidebar(): JSX.Element {
     // get the active Route path
     let isLoginPage = useLocation().pathname === '/' ? true : false
-    const sidebarItem: string = `w-full p-1 text-center text-white hover:bg-green-300`;
-    const sidebarWidth: string = `w-20 bg-green-600`;
+    const sidebarItem: string = `w-full p-1 text-center text-white hover:bg-blue-700`;
+    const sidebarWidth: string = `w-20 bg-darkblue`;
 
     // if the active Route path is Login, then disable Sidebar
     return isLoginPage ? <></> : <div className={sidebarWidth}>
-        <nav className={`fixed flex flex-col gap-3 items-center text-lg ${sidebarWidth}`}>
+        <nav className={`fixed h-screen z-50 flex flex-col gap-3 items-center text-lg ${sidebarWidth}`}>
             <Link to={"/dashboard"} className="py-3">
                 <img className="mx-auto" src="images/logo1.png" alt="logo1" />
             </Link>
