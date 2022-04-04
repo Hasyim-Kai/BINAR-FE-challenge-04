@@ -9,7 +9,7 @@ export default function Navbar(): JSX.Element {
     function handleSetMobileNavOpen() { setMobileNavOpen(!isMobileNavOpen) };
 
     // if the active Route path is Login, then disable Navbar
-    return <nav className="w-full z-50">
+    return <nav className="w-full z-50 bg-backgroundGrey">
         {/* <!-- container --> */}
         <div className="container mx-auto flex flex-wrap justify-between items-center px-4 py-3 lg:space-x-4">
             <div className='flex'>
