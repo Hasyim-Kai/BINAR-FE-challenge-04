@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import CarList from './pages/CarList';
-import Dashboard from './pages/Dashboard';
+// import CarDetailPage from './pages/CarDetailPage';
 import NotFound from './pages/NotFound';
 import SearchPage from './pages/SearchPage';
+import SearchResultPage from './pages/SearchResultPage';
 
 export default function App(): JSX.Element {
   return <BrowserRouter >
@@ -13,8 +13,8 @@ export default function App(): JSX.Element {
     <main>
       <Routes>
         <Route index element={<SearchPage />} />
-        <Route path="search-result" element={<Dashboard />} />
-        <Route path="car-rent-detail" element={<CarList />} />
+        <Route path="search-result" element={<SearchResultPage />} />
+        {/* <Route path="car-rent-detail/:id" element={<CarDetailPage />} /> */}
         <Route path='*' element={<NotFound />} />
       </Routes>
     </main>
