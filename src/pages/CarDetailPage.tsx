@@ -82,7 +82,7 @@ export default function CarDetailPage() {
          <aside className={`${sectionStyle} h-auto lg:w-1/2`}>
             <img className="mx-auto" src={carDetail.image} alt="Car" />
             <h4 className="font-bold mb-2 mt-12">{carDetail.name} / {carDetail.category}</h4>
-            <div className="flex mb-12 text-gray-500">
+            <div className="flex flex-wrap mb-12 text-gray-500">
                <p className="flex mr-4"><img className="mr-2" src="/images/icons/fi_users.svg" alt="user" />4 Orang</p>
                <p className="flex mr-4"><img className="mr-2" src="/images/icons/fi_settings.svg" alt="car_type" />Manual</p>
                <p className="flex mr-4"><img className="mr-2" src="/images/icons/fi_calendar.svg" alt="manufactured_date" />Tahun 2020</p>
