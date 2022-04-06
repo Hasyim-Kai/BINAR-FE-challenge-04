@@ -45,9 +45,9 @@ export default function CarList(): JSX.Element {
         </div>
 
         <section className="flex gap-5 justify-between flex-wrap">
+            {/* <CarCard />
             <CarCard />
-            <CarCard />
-            <CarCard />
+            <CarCard /> */}
         </section>
     </>
 }
