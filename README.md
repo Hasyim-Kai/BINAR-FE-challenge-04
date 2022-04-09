@@ -1,5 +1,5 @@
 # :skull::hocho: BINAR FE Challenge-04
-#### Same design with [BINAR FE Challenge-03](https://github.com/Hasyim-Kai/BINAR-FE-challenge-03), but built with :point_down:
+#### Built with :point_down:
 ### :trumpet: Tech Stack : React + Typescript + Tailwind
 
 # :camera: Desktop Screenshot
